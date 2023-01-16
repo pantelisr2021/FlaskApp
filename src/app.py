@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 import json
 
 
@@ -11,7 +11,7 @@ def root():
     return render_template("index.html")
 
 
-@app.route("/signup/")
+@app.route("/signup/",methods=["GET","POST"])
 def signup():
     return render_template("signup.html")
 
