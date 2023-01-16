@@ -1,9 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 import json
 
-
 app = Flask(__name__)
-
 
 @app.route("/index/")
 @app.route("/")
@@ -13,7 +11,7 @@ def root():
 
 @app.route("/signup/",methods=["GET","POST"])
 def signup():
-    print(request.form)
+    print(request.form["username"])
     return render_template("signup.html")
 
 
