@@ -11,7 +11,7 @@ def root():
 
 @app.route("/signup/",methods=["GET","POST"])
 def signup():
-    print(request.form["username"])
+    print(request.form)
     return render_template("signup.html")
 
 
