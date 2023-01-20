@@ -34,6 +34,10 @@ def new_article():
 def okairos():
     return render_template("okairos.html")
 
+@app.route("/movies/")
+def movies():
+    return render_template("movies.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
