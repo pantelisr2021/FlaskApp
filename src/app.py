@@ -34,9 +34,26 @@ def new_article():
 def okairos():
     return render_template("okairos.html")
 
+
 @app.route("/movies/")
-def movies():
-    return render_template("movies.html")
+def get_movies_list():
+    url = "https://api.themoviedb.org/3/movie/popular?api_key=18a017b1725a276ac9a9838ec5345147"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    jsondata = json.loads(data)
+
+    movie_json = []
+    
+    for movie in jsondata["results"]:
+        movie = {
+            "title": movie["title"],
+            "overview": movie["overview"],
+        }
+        
+        movie_json.append(movie)
+    print(movie_json)
+    return {"movie title": movie_json}
 
 
 if __name__ == "__main__":
