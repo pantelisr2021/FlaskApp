@@ -31,6 +31,12 @@ def new_article():
 
 @app.route("/okairos/")
 def okairos():
+    url=https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
     return render_template("okairos.html")
 
 
