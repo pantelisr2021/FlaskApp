@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
-import json
+import import urllib.request, json
+
 
 app = Flask(__name__)
 
@@ -31,7 +32,8 @@ def new_article():
 
 @app.route("/okairos/")
 def okairos():
-    url=https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+    url=https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}.format(os.environ.get("TMDB_API_KEY"))
+
 
     response = urllib.request.urlopen(url)
     data = response.read()
