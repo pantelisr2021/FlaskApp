@@ -39,7 +39,7 @@ def okairos():
     data = response.read()
     dict = json.loads(data)
 
-    return render_template("okairos.html")
+    return render_template("okairos.html", okairos=dict["results"] )
 
 
 
