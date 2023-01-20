@@ -36,9 +36,7 @@ def okairos():
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
-    return render_template("okairos.html", okairos=dict["results"] )
-
-
+    return render_template("okairos.html")
 
 
 if __name__ == "__main__":
