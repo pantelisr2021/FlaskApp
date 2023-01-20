@@ -29,6 +29,10 @@ def logout():
 def new_article():
     return render_template("new_article.html")
 
+@app.route("/okairos/")
+def okairos():
+    return render_template("okairos.html")
+
 
 
 
