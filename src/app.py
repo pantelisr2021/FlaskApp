@@ -12,8 +12,14 @@ def root():
 
 @app.route("/signup/",methods=["GET","POST"])
 def signup():
-    print(request.form)
-    return render_template("signup.html")
+    form = SignupForm()
+    if request.method=="POST" and form.validate_on_submit():
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        password2 = form.password2.data
+
+    return render_template("signup.html", form=form)
 
 
 @app.route("/login/")
