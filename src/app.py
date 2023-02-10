@@ -4,6 +4,8 @@ import  urllib.request, json
 
 app = Flask(__name__)
 
+app.config["SECRET_KEY"] = 'ec1348b449ed1d96e7c5758fbdaf40a6'
+
 @app.route("/index/")
 @app.route("/")
 def root():
