@@ -11,5 +11,36 @@
 {% block content %}
     
     <H3> LOGIN PAGE </H3>
+    <div class="container login-container">
+      <div class="row"> 
+        <div class="col-md-6 login-form-1">
+          <h3> Σελίδα Σύνδεσης </h3> 
+        
+          <form action="#" method="POST">
+            <div class="mb-3">
+              
+              {{ form.username.label(class="form-label")  }}
+              {{ form.username(class="form-control")      }}
+
+              
+            </div>
+            
+            <div class="mb-3">
+              {{ form.password.label(class="form-label")  }}
+              {{ form.password(class="form-control")      }}
+
+              
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary"> Σύνδεση </button>
+            </div>     
+        </form>
+        </div>
+      </div>
+    </div>
+
+
+
 
 {% endblock content %}

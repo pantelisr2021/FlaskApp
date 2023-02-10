@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
 import  urllib.request, json 
-from forms import SignupForm
+from forms import SignupForm, LoginForm
 
 app = Flask(__name__)
 
@@ -24,9 +24,13 @@ def signup():
     return render_template("signup.html", form=form)
 
 
-@app.route("/login/")
+@app.route("/login/",methods=["GET","POST"])
 def login():
-    return render_template("login.html")
+    form = LoginForm()
+    if request.method=="POST" and form.validate_on_submit():
+        username = form.username.data
+        
+    return render_template("login.html",form=form)
 
 
 @app.route("/logout/")
