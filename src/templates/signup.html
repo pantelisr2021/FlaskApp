@@ -16,10 +16,13 @@
           <h3> Σελίδα Εγγραφής </h3> 
         
           <form action="#" method="POST">
+
+            {{ form.csrf_token }}  
+
             <div class="mb-3">
               
               {{ form.username.label(class="form-label")  }}
-              {{ form.username(class="form-control")      }}
+              {{ form.username(class="form-control", required=False)      }}
 
               {% if form.username.errors %}
                   <ul class="errors">
