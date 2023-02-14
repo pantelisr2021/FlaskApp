@@ -20,8 +20,9 @@ class SignupForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    username = StringField(label="Username",
-                        validators=[DataRequired(message="Αυτό το πεδίο δεν μπορεί να είναι κενό")])
+    email=StringField(label="Email",
+                        validators=[DataRequired(message="Αυτό το πεδίο δεν μπορεί να είναι κενό"),
+                                    Email(message = "Παρακαλώ εισάγετε σωστά το εμαιλ")])
     password=StringField(label="Password",
                         validators=[DataRequired(message="Αυτό το πεδίο δεν μπορεί να είναι κενό")])
     submit=SubmitField("Σύνδεση") 

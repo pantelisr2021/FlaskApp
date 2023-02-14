@@ -9,37 +9,55 @@
     
     
 {% block content %}
+<div class="container login-container">
+  <div class="row"> 
+    <div class="col-md-6 login-form-1">
+      <h3> Σελίδα Σύνδεσης  </h3> 
     
-    <div class="container login-container">
-      <div class="row"> 
-        <div class="col-md-6 login-form-1">
-          <h3> Σελίδα Σύνδεσης </h3>
+      <form action="#" method="POST">
 
-          <form action="#" method="POST">
-            <div class="mb-3">
-              
-              {{ form.username.label(class="form-label")  }}
-              {{ form.username(class="form-control")      }}
+        {{ form.csrf_token }}  
 
-              
-            </div>
-            
-            <div class="mb-3">
-              {{ form.password.label(class="form-label")  }}
-              {{ form.password(class="form-control")      }}
+        <div class="mb-3">
+          
+          {{ form.email.label(class="form-label")  }}
+          {{ form.email(class="form-control")      }}
 
-              
-            </div>
+          {% if form.email.errors %}
+              <ul class="errors">
+                {% for error in form.email.errors %}
+                    <li class="alert text-danger"> {{ error }}  </li>
+                {% endfor %}
+              </ul>             
+          {% endif %}
 
-            <div class="mb-3">
-              <button type="submit" class="btn btn-primary"> Σύνδεση </button>
-            </div>     
-        </form>
+          <div id="emailHelp" class="form-text"> Παρακαλώ δώστε email </div>
         </div>
-      </div>
+        
+  
+        <div class="mb-3">
+          {{ form.password.label(class="form-label")  }}
+          {{ form.password(class="form-control")      }}
+
+          {% if form.password.errors %}
+              <ul class="errors">
+                {% for error in form.password.errors %}
+                    <li class="alert text-danger"> {{ error }}  </li>
+                {% endfor %}
+              </ul>             
+          {% endif %}
+          <div id="passwordHelp" class="form-text"> Παρακαλώ δώστε password </div>
+        </div>      
+        
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary"> Είσοδος</button>
+        </div>
+
+        
+    </form>
     </div>
-
-
-
+  </div>
+</div>
+    
 
 {% endblock content %}

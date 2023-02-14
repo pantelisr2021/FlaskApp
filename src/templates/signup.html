@@ -3,7 +3,7 @@
            
 {% block title %}
   
-  Signup
+  Signup Page
     
 {% endblock title %}
     
@@ -31,13 +31,15 @@
                     {% endfor %}
                   </ul>             
               {% endif %}
-              <div id="usernameHelp" class="form-text"> Παρακαλώ δώστε username </div>
+              <div id="usernameHelp" class="form-text"> 
+                Παρακαλώ δώστε username 
+              </div>
             </div>
 
             <div class="mb-3">
               
               {{ form.email.label(class="form-label")  }}
-              {{ form.email(class="form-control")      }}
+              {{ form.email(class="form-control", required=False)      }}
 
               {% if form.email.errors %}
                   <ul class="errors">
@@ -47,13 +49,14 @@
                   </ul>             
               {% endif %}
 
-              <div id="emailHelp" class="form-text"> Παρακαλώ δώστε email </div>
+              <div id="emailHelp" class="form-text"> 
+                Παρακαλώ δώστε email 
+              </div>
             </div>
-            
-            
+                       
             <div class="mb-3">
               {{ form.password.label(class="form-label")  }}
-              {{ form.password(class="form-control")      }}
+              {{ form.password(class="form-control", required=False)      }}
 
               {% if form.password.errors %}
                   <ul class="errors">
@@ -62,13 +65,14 @@
                     {% endfor %}
                   </ul>             
               {% endif %}
-              <div id="passwordHelp" class="form-text"> Παρακαλώ δώστε password </div>
+              <div id="passwordHelp" class="form-text"> 
+                Παρακαλώ δώστε password 
+              </div>
             </div>
-
 
             <div class="mb-3">
               {{ form.password2.label(class="form-label")  }}
-              {{ form.password2(class="form-control")      }}
+              {{ form.password2(class="form-control", required=False) }}
 
               {% if form.password2.errors %}
                   <ul class="errors">
@@ -78,14 +82,15 @@
                   </ul>             
               {% endif %}
 
-              <div id="password2Help" class="form-text"> Παρακαλώ επιβεβαιώστε το password </div>
+              <div id="password2Help" class="form-text"> 
+                Παρακαλώ επιβεβαιώστε το password 
+              </div>
             </div>
 
 
             <div class="mb-3">
               <button type="submit" class="btn btn-primary"> Αποστολή</button>
             </div>
-
             
         </form>
         </div>
